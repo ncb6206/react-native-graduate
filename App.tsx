@@ -1,26 +1,35 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import styled from "styled-components/native";
-import { Button } from "react-native";
-
-const Container = styled.View`
-  flex: 1;
-  background-color: #fff;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Font = styled.Text`
-  font-size: 30;
-  margin-bottom: 10;
-`;
+import { StyleSheet, View, Text, Button } from "react-native";
+import { getFonts, basic_theme } from "./theme";
 
 export default function App() {
+  getFonts();
+
   return (
-    <Container>
-      <Font>Button Component </Font>
+    <View style={styles.container}>
+      <Text style={styles.text}>Button Component</Text>
       <Button title="Button" onPress={() => alert("click!")} />
       <StatusBar style="auto" />
-    </Container>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: basic_theme.bgColor,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 48,
+    fontFamily: "bold",
+    fontWeight: "400",
+    color: "black",
+  },
+  logo: {
+    width: 100,
+    height: 100,
+  },
+});
