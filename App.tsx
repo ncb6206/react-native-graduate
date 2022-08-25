@@ -1,10 +1,30 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
-import { getFonts, basic_theme } from "./theme";
+import { basic_theme } from "./theme";
+import * as Font from "expo-font";
+import Initial from "./pages/InitialScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 export default function App() {
-  getFonts();
+  const [fontLoad, setFontLoad] = useState(false);
+
+  // font 불러오기
+  useEffect(() => {
+    const Load = async () => {
+      await Font.loadAsync({
+        "notosanskr-black": require("./assets/fonts/NotoSansKR-Black.otf"),
+        "notosanskr-bold": require("./assets/fonts/NotoSansKR-Bold.otf"),
+        "notosanskr-light": require("./assets/fonts/NotoSansKR-Light.otf"),
+        "notosanskr-medium": require("./assets/fonts/NotoSansKR-Medium.otf"),
+        "notosanskr-regular": require("./assets/fonts/NotoSansKR-Regular.otf"),
+        "notosanskr-thin": require("./assets/fonts/NotoSansKR-Thin.otf"),
+      });
+      setFontLoad(true);
+    };
+    Load();
+  }, []);
 
   return (
     <View style={styles.container}>
