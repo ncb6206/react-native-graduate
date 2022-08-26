@@ -1,14 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, Image } from "react-native";
 import { basic_theme } from "./theme";
 import * as Font from "expo-font";
 import Initial from "./pages/InitialScreen";
+import Login from "./pages/Login";
+import Main from "./pages/Main";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 export default function App() {
   const [fontLoad, setFontLoad] = useState(false);
+  const AppStack = createNativeStackNavigator();
 
   // font 불러오기
   useEffect(() => {
@@ -26,11 +29,20 @@ export default function App() {
     Load();
   }, []);
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Button Component</Text>
-      <Button title="Button" onPress={() => alert("click!")} />
-      <StatusBar style="auto" />
+  // font Loading 여부에 따라 return
+  return fontLoad ? (
+    <NavigationContainer>
+      <AppStack.Navigator screenOptions={{ headerShown: false }}>
+        {/* BottomTAB 없는 Screen */}
+        <AppStack.Screen name="Login" component={Login} />
+        <AppStack.Screen name="Initial" component={Initial} />
+        {/* BottomTAB 있는 Screen */}
+        <AppStack.Screen name="Main" component={Main} />
+      </AppStack.Navigator>
+    </NavigationContainer>
+  ) : (
+    <View style={styles.appLoading}>
+      <Text>Loading...</Text>
     </View>
   );
 }
@@ -51,5 +63,10 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
+  },
+  appLoading: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

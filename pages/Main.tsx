@@ -1,22 +1,31 @@
-import React, { Component } from "react";
-import styled from "styled-components/native";
-
-const Container = styled.View`
-  flex: 1;
-  background-color: #fff;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Font = styled.Text`
-  font-size: 30;
-  margin-bottom: 10;
-`;
+import React from "react";
+import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { basic_theme } from "../theme";
 
 export default function Main() {
   return (
-    <Container>
-      <Font>MainScreen</Font>
-    </Container>
+    <View style={styles.container}>
+      <Text style={styles.text}>MainScreen</Text>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: basic_theme.bgColor,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 48,
+    fontFamily: "bold",
+    fontWeight: "400",
+    color: "black",
+    textAlign: "center",
+  },
+  logo: {
+    width: 100,
+    height: 100,
+  },
+});
