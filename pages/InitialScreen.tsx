@@ -5,7 +5,7 @@ import { basic_theme } from "../theme";
 export default function InitialScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>MainScreen</Text>
+      <Text style={styles.text}>InitialScreen</Text>
     </View>
   );
 }
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 48,
-    fontFamily: "bold",
+    fontFamily: "notosanskr-bold",
     fontWeight: "400",
     color: "black",
     textAlign: "center",

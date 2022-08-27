@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 48,
-    fontFamily: "bold",
+    fontFamily: "notosanskr-bold",
     fontWeight: "400",
     color: "black",
     textAlign: "center",

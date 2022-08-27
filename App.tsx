@@ -7,11 +7,11 @@ import Initial from "./pages/InitialScreen";
 import Login from "./pages/Login";
 import Main from "./pages/Main";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
 export default function App() {
   const [fontLoad, setFontLoad] = useState(false);
-  const AppStack = createNativeStackNavigator();
+  const Stack = createStackNavigator();
 
   // font 불러오기
   useEffect(() => {
@@ -32,13 +32,13 @@ export default function App() {
   // font Loading 여부에 따라 return
   return fontLoad ? (
     <NavigationContainer>
-      <AppStack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* BottomTAB 없는 Screen */}
-        <AppStack.Screen name="Login" component={Login} />
-        <AppStack.Screen name="Initial" component={Initial} />
+        <Stack.Screen name="Initial" component={Initial} />
+        <Stack.Screen name="Login" component={Login} />
         {/* BottomTAB 있는 Screen */}
-        <AppStack.Screen name="Main" component={Main} />
-      </AppStack.Navigator>
+        <Stack.Screen name="Main" component={Main} />
+      </Stack.Navigator>
     </NavigationContainer>
   ) : (
     <View style={styles.appLoading}>
