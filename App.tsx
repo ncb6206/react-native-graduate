@@ -44,8 +44,15 @@ export default function App() {
       >
         {/* BottomTAB 없는 Screen */}
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="WordInfo" component={WordInfo} />
+        <Stack.Screen name="Comment" component={Comment} />
+        <Stack.Screen name="WordRequest" component={WordRequest} />
         {/* BottomTAB 있는 Screen */}
         <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Community" component={Community} />
+        <Stack.Screen name="WordExtract" component={WordExtract} />
       </Stack.Navigator>
     </NavigationContainer>
   ) : (
