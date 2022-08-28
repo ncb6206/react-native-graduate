@@ -14,10 +14,12 @@ import WordInfo from "./pages/WordInfo";
 import WordRequest from "./pages/WordRequest";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 export default function App() {
   const [fontLoad, setFontLoad] = useState(false);
   const Stack = createStackNavigator();
+  const Tab = createBottomTabNavigator();
 
   // font 불러오기
   useEffect(() => {
@@ -38,10 +40,7 @@ export default function App() {
   // font Loading 여부에 따라 return
   return fontLoad ? (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Main"
-        screenOptions={{ headerShown: false }}
-      >
+      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
         {/* BottomTAB 없는 Screen */}
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
