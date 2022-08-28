@@ -3,9 +3,15 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Button, Image } from "react-native";
 import { basic_theme } from "./theme";
 import * as Font from "expo-font";
-import Initial from "./pages/InitialScreen";
 import Login from "./pages/Login";
 import Main from "./pages/Main";
+import Comment from "./pages/Comment";
+import Community from "./pages/Community";
+import Profile from "./pages/Profile";
+import SignUp from "./pages/SignUp";
+import WordExtract from "./pages/WordExtract";
+import WordInfo from "./pages/WordInfo";
+import WordRequest from "./pages/WordRequest";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -32,9 +38,11 @@ export default function App() {
   // font Loading 여부에 따라 return
   return fontLoad ? (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator
+        initialRouteName="Main"
+        screenOptions={{ headerShown: false }}
+      >
         {/* BottomTAB 없는 Screen */}
-        <Stack.Screen name="Initial" component={Initial} />
         <Stack.Screen name="Login" component={Login} />
         {/* BottomTAB 있는 Screen */}
         <Stack.Screen name="Main" component={Main} />
