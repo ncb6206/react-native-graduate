@@ -8,15 +8,9 @@ import * as SplashScreen from "expo-splash-screen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./pages/Login";
-import Main from "./pages/Main";
 import Comment from "./pages/Comment";
-import Community from "./pages/Community";
-import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
-import WordExtract from "./pages/WordExtract";
-import WordInfo from "./pages/WordInfo";
 import WordRequest from "./pages/WordRequest";
-import Search from "./pages/Search";
 import Post from "./pages/Post";
 import BottomTab from "./navigation/BottomTab";
 import Toast, { BaseToast } from "react-native-toast-message";
@@ -88,15 +82,16 @@ export default function App() {
   return (
     <>
       <NavigationContainer onReady={onFontLoadView}>
-        <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
-          {/* BottomTAB 없는 Screen */}
+        <Stack.Navigator
+          initialRouteName="BottomTab"
+          screenOptions={{ headerShown: false }}
+        >
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="WordRequest" component={WordRequest} />
           <Stack.Screen name="Post" component={Post} />
-          {/* BottomTAB 있는 Screen */}
-          <Stack.Screen name="BottomTab" component={BottomTab} />
-          <Stack.Screen name="Main" component={Main} />
+          <Stack.Screen name="Comment" component={Comment} />
         </Stack.Navigator>
       </NavigationContainer>
       <Toast config={toastConfig} />

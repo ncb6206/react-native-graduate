@@ -1,34 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { basic_theme } from "../theme";
+import Community from "../pages/Community";
+import Profile from "../pages/Profile";
+import WordExtract from "../pages/WordExtract";
+import Main from "../pages/Main";
+import StackDictionary from "../navigation/StackDictionary";
 
 export default function BottomTab() {
   const Tab = createBottomTabNavigator();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>PostScreen</Text>
-    </View>
+    <Tab.Navigator
+      initialRouteName="Main"
+      screenOptions={{ headerShown: false }}
+    >
+      <Tab.Screen name="Main" component={Main} />
+      <Tab.Screen name="StackDictionary" component={StackDictionary} />
+      <Tab.Screen name="Community" component={Community} />
+      <Tab.Screen name="WordExtract" component={WordExtract} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: basic_theme.bgColor,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    fontSize: 48,
-    fontFamily: "notosanskr-bold",
-    fontWeight: "400",
-    color: "black",
-    textAlign: "center",
-  },
-  logo: {
-    width: 100,
-    height: 100,
-  },
-});

@@ -1,11 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import { basic_theme } from "../theme";
 
-export default function Profile() {
+export default function Profile({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>ProfileScreen</Text>
+      <Button
+        title="Go to Login"
+        onPress={() => navigation.navigate("Login")}
+      />
+      <Button
+        title="Go to SignUp"
+        onPress={() => navigation.navigate("SignUp")}
+      />
     </View>
   );
 }

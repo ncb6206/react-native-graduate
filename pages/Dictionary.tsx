@@ -1,11 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import { basic_theme } from "../theme";
 
-export default function Dictionary() {
+export default function Dictionary({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>DictionaryScreen</Text>
+      <Button
+        title="Go to Search"
+        onPress={() => navigation.navigate("Search")}
+      />
     </View>
   );
 }
