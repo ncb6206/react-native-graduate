@@ -17,6 +17,8 @@ import WordExtract from "./pages/WordExtract";
 import WordInfo from "./pages/WordInfo";
 import WordRequest from "./pages/WordRequest";
 import Search from "./pages/Search";
+import Post from "./pages/Post";
+import BottomTab from "./navigation/BottomTab";
 import Toast, { BaseToast } from "react-native-toast-message";
 
 const toastConfig = {
@@ -90,15 +92,11 @@ export default function App() {
           {/* BottomTAB 없는 Screen */}
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={SignUp} />
-          <Stack.Screen name="WordInfo" component={WordInfo} />
-          <Stack.Screen name="Comment" component={Comment} />
           <Stack.Screen name="WordRequest" component={WordRequest} />
-          <Stack.Screen name="Search" component={Search} />
+          <Stack.Screen name="Post" component={Post} />
           {/* BottomTAB 있는 Screen */}
+          <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="Main" component={Main} />
-          <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Community" component={Community} />
-          <Stack.Screen name="WordExtract" component={WordExtract} />
         </Stack.Navigator>
       </NavigationContainer>
       <Toast config={toastConfig} />
