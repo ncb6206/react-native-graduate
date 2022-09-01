@@ -7,10 +7,7 @@ export default function StackDictionary() {
   const Stack = createStackNavigator();
 
   return (
-    <Stack.Navigator
-      initialRouteName="Dictionary"
-      screenOptions={{ headerShown: false }}
-    >
+    <Stack.Navigator initialRouteName="Dictionary">
       <Stack.Screen name="Dictionary" component={Dictionary} />
       <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="WordInfo" component={WordInfo} />

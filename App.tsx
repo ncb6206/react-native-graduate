@@ -16,7 +16,8 @@ import BottomTab from "./navigation/BottomTab";
 import Toast, { BaseToast } from "react-native-toast-message";
 
 const toastConfig = {
-  //어떤 type이 들어올지 몰라 type을 any로 설정했음
+  // 어떤 type이 들어올지 몰라 type을 any로 설정했음
+  // Toast는 짧게 메시지 표시해주는 거
   success: (props: any) => (
     <BaseToast
       {...props}
@@ -82,13 +83,10 @@ export default function App() {
   return (
     <>
       <NavigationContainer onReady={onFontLoadView}>
-        <Stack.Navigator
-          initialRouteName="BottomTab"
-          screenOptions={{ headerShown: false }}
-        >
+        <Stack.Navigator initialRouteName="BottomTab">
+          <Stack.Screen name="BottomTab" component={BottomTab} options={{ headerShown: false }} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={SignUp} />
-          <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="WordRequest" component={WordRequest} />
           <Stack.Screen name="Post" component={Post} />
           <Stack.Screen name="Comment" component={Comment} />
