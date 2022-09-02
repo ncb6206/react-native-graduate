@@ -7,10 +7,36 @@ export default function StackDictionary() {
   const Stack = createStackNavigator();
 
   return (
-    <Stack.Navigator initialRouteName="Dictionary">
-      <Stack.Screen name="Dictionary" component={Dictionary} />
-      <Stack.Screen name="Search" component={Search} />
-      <Stack.Screen name="WordInfo" component={WordInfo} />
+    <Stack.Navigator
+      initialRouteName="Dictionary"
+      screenOptions={{
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
+      <Stack.Screen
+        name="Dictionary"
+        component={Dictionary}
+        options={{
+          title: "신조어 사전",
+        }}
+      />
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{
+          title: "검색",
+        }}
+      />
+      <Stack.Screen
+        name="WordInfo"
+        component={WordInfo}
+        options={{
+          title: "상세정보",
+        }}
+      />
     </Stack.Navigator>
   );
 }

@@ -1,10 +1,15 @@
-import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { basic_theme } from "../theme";
+import LogoTitle from "../component/LogoTitle";
 
 export default function Login() {
+  const [userid, setUerId] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
   return (
     <View style={styles.container}>
+      <LogoTitle></LogoTitle>
       <Text style={styles.text}>LoginScreen</Text>
     </View>
   );

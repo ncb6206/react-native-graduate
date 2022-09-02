@@ -1,7 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useCallback, useEffect, useState } from "react";
 import { useWindowDimensions } from "react-native";
-import { StyleSheet, View, Text, Button, Image } from "react-native";
 import { basic_theme } from "./theme";
 import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -83,40 +81,54 @@ export default function App() {
   return (
     <>
       <NavigationContainer onReady={onFontLoadView}>
-        <Stack.Navigator initialRouteName="BottomTab">
+        <Stack.Navigator
+          initialRouteName="BottomTab"
+          screenOptions={{
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        >
           <Stack.Screen name="BottomTab" component={BottomTab} options={{ headerShown: false }} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="SignUp" component={SignUp} />
-          <Stack.Screen name="WordRequest" component={WordRequest} />
-          <Stack.Screen name="Post" component={Post} />
-          <Stack.Screen name="Comment" component={Comment} />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              title: "로그인",
+            }}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUp}
+            options={{
+              title: "회원가입",
+            }}
+          />
+          <Stack.Screen
+            name="WordRequest"
+            component={WordRequest}
+            options={{
+              title: "신조어 추가",
+            }}
+          />
+          <Stack.Screen
+            name="Post"
+            component={Post}
+            options={{
+              title: "게시글 작성",
+            }}
+          />
+          <Stack.Screen
+            name="Comment"
+            component={Comment}
+            options={{
+              title: "댓글",
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       <Toast config={toastConfig} />
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: basic_theme.bgColor,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    fontSize: 48,
-    fontFamily: "bold",
-    fontWeight: "400",
-    color: "black",
-  },
-  logo: {
-    width: 100,
-    height: 100,
-  },
-  appLoading: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

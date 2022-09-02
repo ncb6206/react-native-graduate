@@ -7,14 +7,23 @@ import WordExtract from "../pages/WordExtract";
 import Main from "../pages/Main";
 import StackDictionary from "../navigation/StackDictionary";
 import { basic_theme } from "../theme";
+import LogoTitle from "../component/LogoTitle";
 
 export default function BottomTab() {
   const Tab = createBottomTabNavigator();
 
   return (
-    <Tab.Navigator initialRouteName="Main">
+    <Tab.Navigator
+      initialRouteName="신조어 번역"
+      screenOptions={{
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Tab.Screen
-        name="메인"
+        name="신조어 번역"
         component={Main}
         options={{
           tabBarShowLabel: false,

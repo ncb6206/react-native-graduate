@@ -6,14 +6,8 @@ export default function Profile({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>ProfileScreen</Text>
-      <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate("Login")}
-      />
-      <Button
-        title="Go to SignUp"
-        onPress={() => navigation.navigate("SignUp")}
-      />
+      <Button title="Go to Login" onPress={() => navigation.navigate("Login")} />
+      <Button title="Go to SignUp" onPress={() => navigation.navigate("SignUp")} />
     </View>
   );
 }
