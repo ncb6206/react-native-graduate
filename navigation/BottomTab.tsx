@@ -27,7 +27,15 @@ export default function BottomTab() {
         component={Main}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => <Ionicons name="ios-home" style={{ color: focused ? basic_theme.focusedin : basic_theme.focusedout }} size={24} />,
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="ios-home"
+              style={{
+                color: focused ? basic_theme.focusedin : basic_theme.focusedout,
+              }}
+              size={24}
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -36,7 +44,15 @@ export default function BottomTab() {
         options={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => <FontAwesome name="search" style={{ color: focused ? basic_theme.focusedin : basic_theme.focusedout }} size={24} />,
+          tabBarIcon: ({ focused }) => (
+            <FontAwesome
+              name="search"
+              style={{
+                color: focused ? basic_theme.focusedin : basic_theme.focusedout,
+              }}
+              size={24}
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -44,7 +60,15 @@ export default function BottomTab() {
         component={Community}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => <AntDesign name="eyeo" style={{ color: focused ? basic_theme.focusedin : basic_theme.focusedout }} size={24} />,
+          tabBarIcon: ({ focused }) => (
+            <AntDesign
+              name="eyeo"
+              style={{
+                color: focused ? basic_theme.focusedin : basic_theme.focusedout,
+              }}
+              size={24}
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -52,7 +76,15 @@ export default function BottomTab() {
         component={WordExtract}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => <FontAwesome name="file-word-o" style={{ color: focused ? basic_theme.focusedin : basic_theme.focusedout }} size={24} />,
+          tabBarIcon: ({ focused }) => (
+            <FontAwesome
+              name="file-word-o"
+              style={{
+                color: focused ? basic_theme.focusedin : basic_theme.focusedout,
+              }}
+              size={24}
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -60,7 +92,15 @@ export default function BottomTab() {
         component={Profile}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => <Ionicons name="person" style={{ color: focused ? basic_theme.focusedin : basic_theme.focusedout }} size={24} />,
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="person"
+              style={{
+                color: focused ? basic_theme.focusedin : basic_theme.focusedout,
+              }}
+              size={24}
+            />
+          ),
         }}
       />
     </Tab.Navigator>

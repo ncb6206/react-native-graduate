@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { Button } from "react-native-elements";
 import { basic_theme } from "../theme";
 
 export default function Dictionary({ navigation }: any) {

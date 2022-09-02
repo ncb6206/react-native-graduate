@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import { Button } from "react-native-elements";
 import { basic_theme } from "../theme";
 import LogoTitle from "../component/LogoTitle";
 
@@ -16,10 +17,18 @@ export default function Signup() {
     <View style={styles.container}>
       <LogoTitle></LogoTitle>
       <TextInput style={styles.input} onChangeText={setUerId} value={userid} />
-      <TextInput style={styles.input} onChangeText={setNickname} value={nickname} />
+      <TextInput
+        style={styles.input}
+        onChangeText={setNickname}
+        value={nickname}
+      />
       <TextInput style={styles.input} onChangeText={setEmail} value={email} />
       <TextInput style={styles.input} onChangeText={setPhone} value={phone} />
-      <TextInput style={styles.input} onChangeText={setPassword} value={password} />
+      <TextInput
+        style={styles.input}
+        onChangeText={setPassword}
+        value={password}
+      />
     </View>
   );
 }
