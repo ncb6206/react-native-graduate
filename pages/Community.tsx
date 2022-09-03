@@ -12,6 +12,7 @@ export default function Community({ navigation }: any) {
         title="Go to Comment"
         onPress={() => navigation.navigate("Comment")}
       />
+      <Button title="게시글 작성" />
     </View>
   );
 }

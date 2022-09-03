@@ -11,6 +11,8 @@ export default function WordExtract({ navigation }: any) {
         title="Go to WordRequest"
         onPress={() => navigation.navigate("WordRequest")}
       />
+      <Button title="신조어 추출" />
+      <Button title="신조어 등록 요청" />
     </View>
   );
 }

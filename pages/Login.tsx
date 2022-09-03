@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import { Button } from "react-native-elements";
 import { basic_theme } from "../theme";
 import LogoTitle from "../component/LogoTitle";
 
@@ -10,7 +11,13 @@ export default function Login() {
   return (
     <View style={styles.container}>
       <LogoTitle></LogoTitle>
-      <Text style={styles.text}>LoginScreen</Text>
+      <TextInput style={styles.input} onChangeText={setUerId} value={userid} />
+      <TextInput
+        style={styles.input}
+        onChangeText={setPassword}
+        value={password}
+      />
+      <Button title="로그인" />
     </View>
   );
 }
@@ -29,8 +36,11 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  input: {
+    width: "70%",
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });

@@ -29,6 +29,7 @@ export default function Signup() {
         onChangeText={setPassword}
         value={password}
       />
+      <Button title="회원가입" />
     </View>
   );
 }
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   input: {
+    width: "70%",
     height: 40,
     margin: 12,
     borderWidth: 1,
