@@ -7,7 +7,21 @@ export default function Main() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>MainScreen</Text>
-      <Button title="문장 변환" />
+      <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
+        title="문장 변환"
+      />
     </View>
   );
 }

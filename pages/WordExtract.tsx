@@ -8,11 +8,51 @@ export default function WordExtract({ navigation }: any) {
     <View style={styles.container}>
       <Text style={styles.text}>WordExtractScreen</Text>
       <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
         title="Go to WordRequest"
         onPress={() => navigation.navigate("WordRequest")}
       />
-      <Button title="신조어 추출" />
-      <Button title="신조어 등록 요청" />
+      <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
+        title="신조어 추출"
+      />
+      <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
+        title="신조어 등록 요청"
+      />
     </View>
   );
 }

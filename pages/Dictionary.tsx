@@ -8,6 +8,18 @@ export default function Dictionary({ navigation }: any) {
     <View style={styles.container}>
       <Text style={styles.text}>DictionaryScreen</Text>
       <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
         title="Go to Search"
         onPress={() => navigation.navigate("Search")}
       />

@@ -7,12 +7,38 @@ export default function Community({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>CommunityScreen</Text>
-      <Button title="Go to Post" onPress={() => navigation.navigate("Post")} />
       <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
+        title="게시글 작성"
+        onPress={() => navigation.navigate("Post")}
+      />
+      <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
         title="Go to Comment"
         onPress={() => navigation.navigate("Comment")}
       />
-      <Button title="게시글 작성" />
     </View>
   );
 }

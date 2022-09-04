@@ -33,7 +33,7 @@ export default function Login({ navigation }: any) {
         }}
         title="로그인"
       />
-      <View></View>
+      <View>
         <Text style={styles.text}>
           {"아이디가 없으면? "}
           <Text

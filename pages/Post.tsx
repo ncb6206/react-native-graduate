@@ -7,7 +7,21 @@ export default function Post() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>PostScreen</Text>
-      <Button title="등록하기" />
+      <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
+        title="등록하기"
+      />
     </View>
   );
 }

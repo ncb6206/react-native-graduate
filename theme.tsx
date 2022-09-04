@@ -3,4 +3,5 @@ export const basic_theme = {
   fgColor: "#DEE8FF",
   focusedin: "#FF7F00",
   focusedout: "#404040",
+  buttoncolor: "#FF7F00",
 };

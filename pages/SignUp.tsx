@@ -15,7 +15,7 @@ export default function Signup() {
 
   return (
     <View style={styles.container}>
-      <LogoTitle></LogoTitle>
+      <LogoTitle />
       <TextInput style={styles.input} onChangeText={setUerId} value={userid} />
       <TextInput
         style={styles.input}
@@ -29,7 +29,22 @@ export default function Signup() {
         onChangeText={setPassword}
         value={password}
       />
-      <Button title="회원가입" />
+      <View style={styles.div} />
+      <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
+        title="회원가입"
+      />
     </View>
   );
 }
@@ -41,13 +56,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  text: {
-    fontSize: 48,
-    fontFamily: "notosanskr-bold",
-    fontWeight: "400",
-    color: "black",
-    textAlign: "center",
-  },
   input: {
     width: "70%",
     height: 40,
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
-  button: {
-    marginTop: 24,
+  div: {
+    marginTop: 12,
   },
 });
