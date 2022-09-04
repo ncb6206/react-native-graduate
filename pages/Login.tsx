@@ -4,20 +4,46 @@ import { Button } from "react-native-elements";
 import { basic_theme } from "../theme";
 import LogoTitle from "../component/LogoTitle";
 
-export default function Login() {
+export default function Login({ navigation }: any) {
   const [userid, setUerId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   return (
     <View style={styles.container}>
-      <LogoTitle></LogoTitle>
+      <LogoTitle />
       <TextInput style={styles.input} onChangeText={setUerId} value={userid} />
       <TextInput
         style={styles.input}
         onChangeText={setPassword}
         value={password}
       />
-      <Button title="로그인" />
+      <View style={styles.div} />
+      <Button
+        containerStyle={{
+          width: "80%",
+        }}
+        buttonStyle={{
+          backgroundColor: basic_theme.buttoncolor,
+          borderColor: "white",
+          borderRadius: 10,
+        }}
+        titleStyle={{
+          fontWeight: "bold",
+          fontSize: 20,
+        }}
+        title="로그인"
+      />
+      <View></View>
+        <Text style={styles.text}>
+          {"아이디가 없으면? "}
+          <Text
+            style={styles.navitext}
+            onPress={() => navigation.navigate("SignUp")}
+          >
+            {"회원가입"}
+          </Text>
+        </Text>
+      </View>
     </View>
   );
 }
@@ -30,11 +56,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    fontSize: 48,
-    fontFamily: "notosanskr-bold",
-    fontWeight: "400",
+    fontSize: 20,
+    fontFamily: "notosanskr-regular",
     color: "black",
     textAlign: "center",
+  },
+  navitext: {
+    fontSize: 20,
+    fontFamily: "notosanskr-bold",
+    color: "#FF7F00",
   },
   input: {
     width: "70%",
@@ -42,5 +72,8 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+  },
+  div: {
+    marginTop: 12,
   },
 });
