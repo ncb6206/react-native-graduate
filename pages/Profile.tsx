@@ -6,7 +6,7 @@ import { basic_theme } from "../theme";
 export default function Profile({ navigation }: any) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>ProfileScreen</Text>
+      <Text style={styles.text}>로그인을 해주세요</Text>
       <Button
         containerStyle={{
           width: "80%",
@@ -20,9 +20,10 @@ export default function Profile({ navigation }: any) {
           fontWeight: "bold",
           fontSize: 20,
         }}
-        title="Go to Login"
+        title="로그인"
         onPress={() => navigation.navigate("Login")}
       />
+      <Text style={styles.text}>아이디가 없으면?</Text>
       <Button
         containerStyle={{
           width: "80%",
@@ -36,7 +37,7 @@ export default function Profile({ navigation }: any) {
           fontWeight: "bold",
           fontSize: 20,
         }}
-        title="Go to SignUp"
+        title="회원가입"
         onPress={() => navigation.navigate("SignUp")}
       />
     </View>
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    fontSize: 48,
+    fontSize: 30,
     fontFamily: "notosanskr-bold",
     fontWeight: "400",
     color: "black",
