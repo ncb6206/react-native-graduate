@@ -2,6 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import WordInfo from "../pages/WordInfo";
 import Search from "../pages/Search";
 import Dictionary from "../pages/Dictionary";
+import SlangList from "../pages/SlangList";
 
 export default function StackDictionary() {
   const Stack = createStackNavigator();
@@ -21,6 +22,13 @@ export default function StackDictionary() {
         component={Dictionary}
         options={{
           title: "신조어 사전",
+        }}
+      />
+      <Stack.Screen
+        name="SlangList"
+        component={SlangList}
+        options={{
+          title: "신조어 초성 단어 리스트",
         }}
       />
       <Stack.Screen
