@@ -90,7 +90,11 @@ export default function App() {
             },
           }}
         >
-          <Stack.Screen name="BottomTab" component={BottomTab} options={{ headerShown: false }} />
+          <Stack.Screen
+            name="BottomTab"
+            component={BottomTab}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Login"
             component={Login}
@@ -109,7 +113,7 @@ export default function App() {
             name="WordRequest"
             component={WordRequest}
             options={{
-              title: "신조어 추가",
+              title: "신조어 추가 요청",
             }}
           />
           <Stack.Screen

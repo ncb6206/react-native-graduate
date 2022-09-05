@@ -1,27 +1,22 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-elements";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function WordExtract({ navigation }: any) {
+  const [sentence, setSentence] = useState<string>("");
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>WordExtractScreen</Text>
-      <Button
-        containerStyle={{
-          width: "80%",
-        }}
-        buttonStyle={{
-          backgroundColor: basic_theme.buttoncolor,
-          borderColor: "white",
-          borderRadius: 10,
-        }}
-        titleStyle={{
-          fontWeight: "bold",
-          fontSize: 20,
-        }}
-        title="Go to WordRequest"
-        onPress={() => navigation.navigate("WordRequest")}
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
+      <TextInput
+        style={styles.input}
+        placeholder="문장을 입력해 주세요"
+        onChangeText={setSentence}
+        value={sentence}
       />
       <Button
         containerStyle={{
@@ -52,8 +47,9 @@ export default function WordExtract({ navigation }: any) {
           fontSize: 20,
         }}
         title="신조어 등록 요청"
+        onPress={() => navigation.navigate("WordRequest")}
       />
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 
@@ -71,8 +67,11 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  input: {
+    width: "70%",
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });

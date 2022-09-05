@@ -1,12 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { basic_theme } from "../theme";
 
 export default function Comment() {
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
       <Text style={styles.text}>CommentScreen</Text>
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 

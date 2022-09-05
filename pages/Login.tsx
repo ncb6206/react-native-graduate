@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
-import { Button } from "react-native-elements";
+import { Button } from "@rneui/themed";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { basic_theme } from "../theme";
 import LogoTitle from "../component/LogoTitle";
 
 export default function Login({ navigation }: any) {
-  const [userid, setUerId] = useState<string>("");
+  const [userid, setUserId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
       <LogoTitle />
-      <TextInput style={styles.input} onChangeText={setUerId} value={userid} />
       <TextInput
         style={styles.input}
+        placeholder="아이디"
+        onChangeText={setUserId}
+        value={userid}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="비밀번호"
         onChangeText={setPassword}
         value={password}
       />
@@ -44,7 +54,7 @@ export default function Login({ navigation }: any) {
           </Text>
         </Text>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 

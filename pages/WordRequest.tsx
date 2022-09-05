@@ -1,12 +1,37 @@
-import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
-import { Button } from "react-native-elements";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function WordRequest() {
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+  const [name, setName] = useState<string>("");
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>WordRequestScreen</Text>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
+      <TextInput
+        style={styles.input}
+        placeholder="요청 제목"
+        onChangeText={setTitle}
+        value={title}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="요청 내용"
+        onChangeText={setContent}
+        value={content}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="요청 단어"
+        onChangeText={setName}
+        value={name}
+      />
       <Button
         containerStyle={{
           width: "80%",
@@ -22,7 +47,7 @@ export default function WordRequest() {
         }}
         title="등록하기"
       />
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 
@@ -40,8 +65,11 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  input: {
+    width: "70%",
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });

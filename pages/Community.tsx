@@ -1,11 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-elements";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function Community({ navigation }: any) {
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
       <Text style={styles.text}>CommunityScreen</Text>
       <Button
         containerStyle={{
@@ -39,7 +43,7 @@ export default function Community({ navigation }: any) {
         title="Go to Comment"
         onPress={() => navigation.navigate("Comment")}
       />
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 

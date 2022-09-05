@@ -1,11 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-elements";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function Profile({ navigation }: any) {
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
       <Text style={styles.text}>로그인을 해주세요</Text>
       <Button
         containerStyle={{
@@ -40,7 +44,7 @@ export default function Profile({ navigation }: any) {
         title="회원가입"
         onPress={() => navigation.navigate("SignUp")}
       />
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 

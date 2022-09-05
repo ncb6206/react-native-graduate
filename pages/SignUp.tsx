@@ -1,33 +1,61 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
-import { Button } from "react-native-elements";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 import LogoTitle from "../component/LogoTitle";
 
 export default function Signup() {
-  const [userid, setUerId] = useState<string>("");
+  const [userid, setUserId] = useState<string>("");
   const [nickname, setNickname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [checkpassword, setCheckPassword] = useState<string>("");
 
   const onSignUpPressed = () => {};
 
   return (
-    <View style={styles.container}>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.container}
+      scrollEnabled={false}
+    >
       <LogoTitle />
-      <TextInput style={styles.input} onChangeText={setUerId} value={userid} />
       <TextInput
         style={styles.input}
+        placeholder="아이디"
+        onChangeText={setUserId}
+        value={userid}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="닉네임"
         onChangeText={setNickname}
         value={nickname}
       />
-      <TextInput style={styles.input} onChangeText={setEmail} value={email} />
-      <TextInput style={styles.input} onChangeText={setPhone} value={phone} />
       <TextInput
         style={styles.input}
+        placeholder="이메일"
+        onChangeText={setEmail}
+        value={email}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="전화번호"
+        onChangeText={setPhone}
+        value={phone}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="비밀번호"
         onChangeText={setPassword}
         value={password}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="비밀번호 확인"
+        onChangeText={setCheckPassword}
+        value={checkpassword}
       />
       <View style={styles.div} />
       <Button
@@ -45,7 +73,7 @@ export default function Signup() {
         }}
         title="회원가입"
       />
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 
