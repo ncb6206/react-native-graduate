@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { Button } from "@rneui/themed";
+import { Button, SearchBar } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function Search({ navigation }: any) {
+  const [searchslang, setSearchSlang] = useState<string>("");
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>SearchScreen</Text>
+      <SearchBar
+        containerStyle={styles.search}
+        placeholder="Search"
+        onChangeText={setSearchSlang}
+        value={searchslang}
+      />
       <Button
         containerStyle={{
           width: "80%",
@@ -42,8 +48,7 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  search: {
+    width: "90%",
   },
 });

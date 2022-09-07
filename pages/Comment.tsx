@@ -1,12 +1,26 @@
-import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Dimensions } from "react-native";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Dimensions,
+  TextInput,
+} from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { basic_theme } from "../theme";
 
 export default function Comment() {
+  const [comment, setComment] = useState<string>("");
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>CommentScreen</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="댓글"
+        onChangeText={setComment}
+        value={comment}
+      />
     </SafeAreaView>
   );
 }
@@ -25,8 +39,11 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  input: {
+    width: "70%",
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });

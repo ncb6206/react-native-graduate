@@ -1,13 +1,27 @@
-import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Dimensions } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, SafeAreaView, TextInput } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function Post() {
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>PostScreen</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="제목을 입력하세요"
+        onChangeText={setTitle}
+        value={title}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="내용을 입력하세요"
+        onChangeText={setContent}
+        value={content}
+      />
       <Button
         containerStyle={{
           width: "80%",
@@ -41,8 +55,11 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  input: {
+    width: "70%",
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });
