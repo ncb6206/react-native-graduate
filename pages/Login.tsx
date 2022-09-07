@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { Button } from "@rneui/themed";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { basic_theme } from "../theme";
@@ -10,23 +10,10 @@ export default function Login({ navigation }: any) {
   const [password, setPassword] = useState<string>("");
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
+    <SafeAreaView style={styles.container}>
       <LogoTitle />
-      <TextInput
-        style={styles.input}
-        placeholder="아이디"
-        onChangeText={setUserId}
-        value={userid}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="비밀번호"
-        onChangeText={setPassword}
-        value={password}
-      />
+      <TextInput style={styles.input} placeholder="아이디" onChangeText={setUserId} value={userid} />
+      <TextInput style={styles.input} placeholder="비밀번호" onChangeText={setPassword} value={password} />
       <View style={styles.div} />
       <Button
         containerStyle={{
@@ -46,15 +33,12 @@ export default function Login({ navigation }: any) {
       <View>
         <Text style={styles.text}>
           {"아이디가 없으면? "}
-          <Text
-            style={styles.navitext}
-            onPress={() => navigation.navigate("SignUp")}
-          >
+          <Text style={styles.navitext} onPress={() => navigation.navigate("SignUp")}>
             {"회원가입"}
           </Text>
         </Text>
       </View>
-    </KeyboardAwareScrollView>
+    </SafeAreaView>
   );
 }
 

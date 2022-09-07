@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, TextInput } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
@@ -10,28 +10,10 @@ export default function WordRequest() {
   const [name, setName] = useState<string>("");
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
-      <TextInput
-        style={styles.input}
-        placeholder="요청 제목"
-        onChangeText={setTitle}
-        value={title}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="요청 내용"
-        onChangeText={setContent}
-        value={content}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="요청 단어"
-        onChangeText={setName}
-        value={name}
-      />
+    <SafeAreaView style={styles.container}>
+      <TextInput style={styles.input} placeholder="요청 제목" onChangeText={setTitle} value={title} />
+      <TextInput style={styles.input} placeholder="요청 내용" onChangeText={setContent} value={content} />
+      <TextInput style={styles.input} placeholder="요청 단어" onChangeText={setName} value={name} />
       <Button
         containerStyle={{
           width: "80%",
@@ -47,7 +29,7 @@ export default function WordRequest() {
         }}
         title="등록하기"
       />
-    </KeyboardAwareScrollView>
+    </SafeAreaView>
   );
 }
 

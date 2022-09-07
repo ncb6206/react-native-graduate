@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
@@ -8,16 +8,8 @@ export default function WordExtract({ navigation }: any) {
   const [sentence, setSentence] = useState<string>("");
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
-      <TextInput
-        style={styles.input}
-        placeholder="문장을 입력해 주세요"
-        onChangeText={setSentence}
-        value={sentence}
-      />
+    <SafeAreaView style={styles.container}>
+      <TextInput style={styles.input} placeholder="문장을 입력해 주세요" onChangeText={setSentence} value={sentence} />
       <Button
         containerStyle={{
           width: "80%",
@@ -49,7 +41,7 @@ export default function WordExtract({ navigation }: any) {
         title="신조어 등록 요청"
         onPress={() => navigation.navigate("WordRequest")}
       />
-    </KeyboardAwareScrollView>
+    </SafeAreaView>
   );
 }
 

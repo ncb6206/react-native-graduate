@@ -1,16 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Dimensions } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { basic_theme } from "../theme";
 
 export default function WordInfo() {
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
+    <SafeAreaView style={styles.container}>
       <Text style={styles.text}>WordInfoScreen</Text>
-    </KeyboardAwareScrollView>
+    </SafeAreaView>
   );
 }
 

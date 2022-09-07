@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button, Card } from "@rneui/themed";
 import { basic_theme } from "../theme";
@@ -8,16 +8,8 @@ export default function Main() {
   const [sentence, setSentence] = useState<string>("");
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
-      <TextInput
-        style={styles.input}
-        placeholder="변환할 문장을 입력해주세요."
-        onChangeText={setSentence}
-        value={sentence}
-      />
+    <SafeAreaView style={styles.container}>
+      <TextInput style={styles.input} placeholder="변환할 문장을 입력해주세요." onChangeText={setSentence} value={sentence} />
       <Button
         containerStyle={{
           width: "80%",
@@ -36,7 +28,7 @@ export default function Main() {
       <Card containerStyle={{ marginTop: 15 }}>
         <Text style={styles.text}>테스트입니다.</Text>
       </Card>
-    </KeyboardAwareScrollView>
+    </SafeAreaView>
   );
 }
 

@@ -28,7 +28,7 @@ export default function StackDictionary() {
         name="SlangList"
         component={SlangList}
         options={{
-          title: "신조어 초성 단어 리스트",
+          title: "초성별 신조어 목록",
         }}
       />
       <Stack.Screen

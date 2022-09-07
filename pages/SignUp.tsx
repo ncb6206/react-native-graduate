@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
@@ -16,47 +16,14 @@ export default function Signup() {
   const onSignUpPressed = () => {};
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
+    <SafeAreaView style={styles.container}>
       <LogoTitle />
-      <TextInput
-        style={styles.input}
-        placeholder="아이디"
-        onChangeText={setUserId}
-        value={userid}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="닉네임"
-        onChangeText={setNickname}
-        value={nickname}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="이메일"
-        onChangeText={setEmail}
-        value={email}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="전화번호"
-        onChangeText={setPhone}
-        value={phone}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="비밀번호"
-        onChangeText={setPassword}
-        value={password}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="비밀번호 확인"
-        onChangeText={setCheckPassword}
-        value={checkpassword}
-      />
+      <TextInput style={styles.input} placeholder="아이디" onChangeText={setUserId} value={userid} />
+      <TextInput style={styles.input} placeholder="닉네임" onChangeText={setNickname} value={nickname} />
+      <TextInput style={styles.input} placeholder="이메일" onChangeText={setEmail} value={email} />
+      <TextInput style={styles.input} placeholder="전화번호" onChangeText={setPhone} value={phone} />
+      <TextInput style={styles.input} placeholder="비밀번호" onChangeText={setPassword} value={password} />
+      <TextInput style={styles.input} placeholder="비밀번호 확인" onChangeText={setCheckPassword} value={checkpassword} />
       <View style={styles.div} />
       <Button
         containerStyle={{
@@ -73,7 +40,7 @@ export default function Signup() {
         }}
         title="회원가입"
       />
-    </KeyboardAwareScrollView>
+    </SafeAreaView>
   );
 }
 

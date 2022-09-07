@@ -1,32 +1,14 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, ScrollView } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button, ListItem } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function Dictionary({ navigation }: any) {
-  const ListConsonant: string[] = [
-    "ㄱ",
-    "ㄴ",
-    "ㄷ",
-    "ㄹ",
-    "ㅁ",
-    "ㅂ",
-    "ㅅ",
-    "ㅇ",
-    "ㅈ",
-    "ㅊ",
-    "ㅋ",
-    "ㅌ",
-    "ㅍ",
-    "ㅎ",
-  ];
+  const ListConsonant: string[] = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
+    <SafeAreaView style={styles.container}>
       <Button
         containerStyle={{
           width: "80%",
@@ -43,8 +25,25 @@ export default function Dictionary({ navigation }: any) {
         title="검색"
         onPress={() => navigation.navigate("Search")}
       />
-      <ScrollView>{/* ListConsonant.map((consonant) => ) */}</ScrollView>
-    </KeyboardAwareScrollView>
+      <ScrollView style={styles.scroll}>
+        {ListConsonant.map((consonant: Partial<string>, i: number) => (
+          <ListItem
+            key={i}
+            onPress={() => {
+              alert(`${consonant}`);
+              navigation.navigate("SlangList");
+            }}
+            bottomDivider
+          >
+            <ListItem.Content>
+              <ListItem.Title>
+                <Text>{consonant}</Text>
+              </ListItem.Title>
+            </ListItem.Content>
+          </ListItem>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -56,11 +55,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    fontSize: 48,
-    fontFamily: "notosanskr-bold",
-    fontWeight: "400",
+    fontSize: 10,
+    fontFamily: "notosanskr-black",
     color: "black",
-    textAlign: "center",
+    textAlign: "left",
   },
   input: {
     width: "70%",
@@ -68,5 +66,9 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+  },
+  scroll: {
+    width: "100%",
+    marginTop: 10,
   },
 });

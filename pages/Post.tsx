@@ -1,15 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Dimensions } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function Post() {
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      scrollEnabled={false}
-    >
+    <SafeAreaView style={styles.container}>
       <Text style={styles.text}>PostScreen</Text>
       <Button
         containerStyle={{
@@ -26,7 +23,7 @@ export default function Post() {
         }}
         title="등록하기"
       />
-    </KeyboardAwareScrollView>
+    </SafeAreaView>
   );
 }
 
