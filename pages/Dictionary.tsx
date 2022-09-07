@@ -1,16 +1,32 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TextInput, ScrollView } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { Button } from "@rneui/themed";
+import { Button, ListItem } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
 export default function Dictionary({ navigation }: any) {
+  const ListConsonant: string[] = [
+    "ㄱ",
+    "ㄴ",
+    "ㄷ",
+    "ㄹ",
+    "ㅁ",
+    "ㅂ",
+    "ㅅ",
+    "ㅇ",
+    "ㅈ",
+    "ㅊ",
+    "ㅋ",
+    "ㅌ",
+    "ㅍ",
+    "ㅎ",
+  ];
+
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={styles.container}
       scrollEnabled={false}
     >
-      <Text style={styles.text}>DictionaryScreen</Text>
       <Button
         containerStyle={{
           width: "80%",
@@ -24,9 +40,10 @@ export default function Dictionary({ navigation }: any) {
           fontWeight: "bold",
           fontSize: 20,
         }}
-        title="Go to Search"
+        title="검색"
         onPress={() => navigation.navigate("Search")}
       />
+      <ScrollView>{/* ListConsonant.map((consonant) => ) */}</ScrollView>
     </KeyboardAwareScrollView>
   );
 }
@@ -45,8 +62,11 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
-  logo: {
-    width: 100,
-    height: 100,
+  input: {
+    width: "70%",
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });
