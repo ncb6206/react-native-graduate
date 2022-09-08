@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, TextInput } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Input } from "@rneui/themed";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
@@ -11,9 +12,24 @@ export default function WordRequest() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TextInput style={styles.input} placeholder="요청 제목" onChangeText={setTitle} value={title} />
-      <TextInput style={styles.input} placeholder="요청 내용" onChangeText={setContent} value={content} />
-      <TextInput style={styles.input} placeholder="요청 단어" onChangeText={setName} value={name} />
+      <Input
+        style={styles.little}
+        placeholder="요청 제목"
+        onChangeText={setTitle}
+        value={title}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="요청 내용"
+        onChangeText={setContent}
+        value={content}
+      />
+      <Input
+        style={styles.little}
+        placeholder="요청 단어"
+        onChangeText={setName}
+        value={name}
+      />
       <Button
         containerStyle={{
           width: "80%",
@@ -53,5 +69,10 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+  },
+  little: {
+    width: "70%",
+    height: 40,
+    padding: 5,
   },
 });

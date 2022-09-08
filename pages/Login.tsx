@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
+import { Input } from "@rneui/themed";
 import { Button } from "@rneui/themed";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { basic_theme } from "../theme";
@@ -12,13 +13,13 @@ export default function Login({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <LogoTitle />
-      <TextInput
+      <Input
         style={styles.input}
         placeholder="아이디"
         onChangeText={setUserId}
         value={userid}
       />
-      <TextInput
+      <Input
         style={styles.input}
         placeholder="비밀번호"
         onChangeText={setPassword}
@@ -76,9 +77,7 @@ const styles = StyleSheet.create({
   input: {
     width: "70%",
     height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+    padding: 5,
   },
   div: {
     marginTop: 12,

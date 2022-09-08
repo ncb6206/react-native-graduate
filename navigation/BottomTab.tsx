@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons, FontAwesome, AntDesign } from "@expo/vector-icons";
+import { Ionicons, FontAwesome, AntDesign, Feather } from "@expo/vector-icons";
+import { Button } from "@rneui/themed";
 import Community from "../pages/Community";
 import Profile from "../pages/Profile";
 import WordExtract from "../pages/WordExtract";
@@ -9,7 +10,7 @@ import StackDictionary from "../navigation/StackDictionary";
 import { basic_theme } from "../theme";
 import LogoTitle from "../component/LogoTitle";
 
-export default function BottomTab() {
+export default function BottomTab({ navigation }: any) {
   const Tab = createBottomTabNavigator();
 
   return (
@@ -59,6 +60,15 @@ export default function BottomTab() {
         name="커뮤니티"
         component={Community}
         options={{
+          headerRight: () => (
+            <Feather
+              name="plus-square"
+              size={24}
+              color="black"
+              style={{ paddingRight: 15 }}
+              onPress={() => navigation.navigate("Post")}
+            />
+          ),
           tabBarShowLabel: false,
           tabBarIcon: ({ focused }) => (
             <AntDesign

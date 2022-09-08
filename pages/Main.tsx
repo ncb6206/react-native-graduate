@@ -9,7 +9,12 @@ export default function Main() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TextInput style={styles.input} placeholder="변환할 문장을 입력해주세요." onChangeText={setSentence} value={sentence} />
+      <TextInput
+        style={styles.input}
+        placeholder="변환할 문장을 입력해주세요."
+        onChangeText={setSentence}
+        value={sentence}
+      />
       <Button
         containerStyle={{
           width: "80%",

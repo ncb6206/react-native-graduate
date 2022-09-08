@@ -30,7 +30,12 @@ export default function SlangList({ navigation }: any) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList style={styles.scroll} data={ListSlang} renderItem={renderItem} keyExtractor={(item: Slangtype, index: number) => index.toString()} />
+      <FlatList
+        style={styles.scroll}
+        data={ListSlang}
+        renderItem={renderItem}
+        keyExtractor={(item: Slangtype, index: number) => index.toString()}
+      />
     </SafeAreaView>
   );
 }
@@ -51,13 +56,6 @@ const styles = StyleSheet.create({
   scroll: {
     width: "100%",
     marginTop: 10,
-  },
-  header: {
-    fontSize: 20,
-    fontFamily: "notosanskr-bold",
-    color: "black",
-    textAlign: "left",
-    marginLeft: "5%",
   },
 });
 

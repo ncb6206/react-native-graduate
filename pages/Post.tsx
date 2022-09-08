@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, TextInput } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Input } from "@rneui/themed";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 
@@ -10,8 +11,8 @@ export default function Post() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TextInput
-        style={styles.input}
+      <Input
+        style={styles.title}
         placeholder="제목을 입력하세요"
         onChangeText={setTitle}
         value={title}
@@ -61,5 +62,10 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+  },
+  title: {
+    width: "70%",
+    height: 40,
+    padding: 5,
   },
 });

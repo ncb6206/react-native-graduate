@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Input } from "@rneui/themed";
 import { Button } from "@rneui/themed";
 import { basic_theme } from "../theme";
 import LogoTitle from "../component/LogoTitle";
@@ -18,12 +19,42 @@ export default function Signup() {
   return (
     <SafeAreaView style={styles.container}>
       <LogoTitle />
-      <TextInput style={styles.input} placeholder="아이디" onChangeText={setUserId} value={userid} />
-      <TextInput style={styles.input} placeholder="닉네임" onChangeText={setNickname} value={nickname} />
-      <TextInput style={styles.input} placeholder="이메일" onChangeText={setEmail} value={email} />
-      <TextInput style={styles.input} placeholder="전화번호" onChangeText={setPhone} value={phone} />
-      <TextInput style={styles.input} placeholder="비밀번호" onChangeText={setPassword} value={password} />
-      <TextInput style={styles.input} placeholder="비밀번호 확인" onChangeText={setCheckPassword} value={checkpassword} />
+      <Input
+        style={styles.input}
+        placeholder="아이디"
+        onChangeText={setUserId}
+        value={userid}
+      />
+      <Input
+        style={styles.input}
+        placeholder="닉네임"
+        onChangeText={setNickname}
+        value={nickname}
+      />
+      <Input
+        style={styles.input}
+        placeholder="이메일"
+        onChangeText={setEmail}
+        value={email}
+      />
+      <Input
+        style={styles.input}
+        placeholder="전화번호"
+        onChangeText={setPhone}
+        value={phone}
+      />
+      <Input
+        style={styles.input}
+        placeholder="비밀번호"
+        onChangeText={setPassword}
+        value={password}
+      />
+      <Input
+        style={styles.input}
+        placeholder="비밀번호 확인"
+        onChangeText={setCheckPassword}
+        value={checkpassword}
+      />
       <View style={styles.div} />
       <Button
         containerStyle={{
@@ -54,9 +85,7 @@ const styles = StyleSheet.create({
   input: {
     width: "70%",
     height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+    padding: 5,
   },
   div: {
     marginTop: 12,
